@@ -4,16 +4,21 @@ BASEDIR=$PWD
 
 # attempt to clone tmux
 # on success it should overwrite the existing .tmux conf
+echo "- Update tmux if repo still exists"
 cd .tmux
 git pull
 cd $BASEDIR
 
-echo "Linking .vim/ ..."
+echo "- Linking .vim/ ..."
 ln -sf $BASEDIR/.vim $HOME/.vim
 
-echo "Linking .vimrc ..."
+echo "- Linking .vimrc ..."
 ln -sf $BASEDIR/.vimrc $HOME/.vimrc
 
-echo "Linking .tmux ..."
+echo "- Linking .tmux ..."
 ln -sf $BASEDIR/.tmux/.tmux.conf $HOME/.tmux.conf
 cp $BASEDIR/.tmux/.tmux.conf.local $HOME
+
+echo "- Linking .zshrc ..."
+ln -sf $BASEDIR/.zshrc $HOME/.zshrc
+source $HOME/.zshrc
