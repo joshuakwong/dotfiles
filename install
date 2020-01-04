@@ -21,4 +21,4 @@ cp $BASEDIR/.tmux/.tmux.conf.local $HOME
 
 echo "- Linking .zshrc ..."
 ln -sf $BASEDIR/.zshrc $HOME/.zshrc
-. $HOME/.zshrc
+/bin/zsh source $HOME/.zshrc
