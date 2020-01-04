@@ -7,9 +7,12 @@ if [[ "$OSTYPE" == "darwin"* ]]
 then
     echo "OS: MacOS $OSTYPE"
     PKGMGR="brew install"
-else
+elif [[ "$(cat /etc/issue)" == "Ubuntu"* ]] || [[ "$(cat /etc/issue)" == "Debian"* ]] 
     echo "OS: $OSTYPE"
     PKGMGR="sudo apt install "
+else
+    echo "ERROR: Unsupported OS, change the script yourself"
+    exit 1
 fi
 
 
