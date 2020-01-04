@@ -8,9 +8,12 @@ cd .tmux
 git pull
 cd $BASEDIR
 
-
+echo "Linking .vim/ ..."
 ln -sf $HOME/.vim ./.vim
+
+echo "Linking .vimrc ..."
 ln -sf $HOME/.vimrc ./.vimrc
 
+echo "Linking .tmux ..."
 ln -sf $HOME/.tmux.conf .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
