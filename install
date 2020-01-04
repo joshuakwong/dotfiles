@@ -2,6 +2,17 @@
 
 BASEDIR=$PWD
 
+echo "- Determine OS and set package manager..."
+if [[ "$OSTYPE" == "darwin"* ]]
+then
+    echo "OS: MacOS $OSTYPE"
+    PKGMGR="brew install"
+else
+    echo "OS: $OSTYPE"
+    PKGMGR="sudo apt install "
+fi
+
+
 # attempt to clone tmux
 # on success it should overwrite the existing .tmux conf
 echo "- Update tmux if repo still exists"
@@ -24,7 +35,7 @@ which zsh
 if [ $? -ne 0 ]
 then
     echo "zsh has not been installed, will install now"
-    sudo apt install zsh
+    $OSTYPE zsh
 else
     echo "zsh has been installed :)"
 fi
