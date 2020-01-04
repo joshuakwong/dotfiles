@@ -8,6 +8,7 @@ then
     echo "OS: MacOS $OSTYPE"
     PKGMGR="brew install"
 elif [[ "$(cat /etc/issue)" == "Ubuntu"* ]] || [[ "$(cat /etc/issue)" == "Debian"* ]] 
+then
     echo "OS: $OSTYPE"
     PKGMGR="sudo apt install "
 else
