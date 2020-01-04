@@ -1,12 +1,16 @@
 #!/bin/sh
 
+BASEDIR=$PWD
+
 # attempt to clone tmux
 # on success it should overwrite the existing .tmux conf
-git clone https://github.com/gpakosz/.tmux.git
+cd .tmux
+git pull
+cd $BASEDIR
+
 
 ln -sf $HOME/.vim ./.vim
 ln -sf $HOME/.vimrc ./.vimrc
 
 ln -sf $HOME/.tmux.conf .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
-
