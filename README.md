@@ -1,7 +1,9 @@
 # Dotfiles
 
 ### Usage
-```
+``` sh
+git clone https://github.com/joshuakwong/dotfiles.git
+cd dotfiles
 ./install
 ```
 
