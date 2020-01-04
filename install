@@ -19,6 +19,15 @@ echo "- Linking .tmux ..."
 ln -sf $BASEDIR/.tmux/.tmux.conf $HOME/.tmux.conf
 cp $BASEDIR/.tmux/.tmux.conf.local $HOME
 
+echo "-  Install zsh if it doesn't exist"
+which zsh
+if [ $? -ne 0 ]
+then
+    echo "zsh has not been installed, will install now"
+    sudo apt install zsh
+else
+    echo "zsh has been installed :)"
+fi
+
 echo "- Linking .zshrc ..."
 ln -sf $BASEDIR/.zshrc $HOME/.zshrc
-/bin/zsh source $HOME/.zshrc
