@@ -3,12 +3,12 @@
 BASEDIR=$PWD
 
 echo "- Determine OS and set package manager..."
-if [ "$OSTYPE" == "darwin"* ]
+if echo $OSTYPE | grep -Fq "darwin" 
 then
     echo "OS: MacOS $OSTYPE"
-    PKGMGR="brew install"
+    PKGMGR="brew install "
 
-elif [ "$(cat /etc/issue)" == "Ubuntu"* ] || [ "$(cat /etc/issue)" == "Debian"* ]
+elif grep -Fq "Ubuntu" /etc/issue || grep -Fq "Debian" /etc/issue 
 then
     echo "OS: $OSTYPE"
     PKGMGR="sudo apt install "
