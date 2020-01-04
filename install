@@ -3,14 +3,16 @@
 BASEDIR=$PWD
 
 echo "- Determine OS and set package manager..."
-if [[ "$OSTYPE" == "darwin"* ]]
+if [ "$OSTYPE" == "darwin"* ]
 then
     echo "OS: MacOS $OSTYPE"
     PKGMGR="brew install"
-elif [[ "$(cat /etc/issue)" == "Ubuntu"* ]] || [[ "$(cat /etc/issue)" == "Debian"* ]] 
+
+elif [ "$(cat /etc/issue)" == "Ubuntu"* ] || [ "$(cat /etc/issue)" == "Debian"* ]
 then
     echo "OS: $OSTYPE"
     PKGMGR="sudo apt install "
+
 else
     echo "ERROR: Unsupported OS, change the script yourself"
     exit 1
