@@ -9,11 +9,11 @@ git pull
 cd $BASEDIR
 
 echo "Linking .vim/ ..."
-ln -sf ./.vim $HOME/.vim 
+ln -sf $BASEDIR/.vim $HOME/.vim
 
 echo "Linking .vimrc ..."
-ln -sf ./.vimrc $HOME/.vimrc 
+ln -sf $BASEDIR/.vimrc $HOME/.vimrc
 
 echo "Linking .tmux ..."
-ln -sf .tmux/.tmux.conf $HOME/.tmux.conf 
-cp .tmux/.tmux.conf.local .
+ln -sf $BASEDIR/.tmux/.tmux.conf $HOME/.tmux.conf
+cp $BASEDIR/.tmux/.tmux.conf.local $HOME
