@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/jk/uni/3900/capstone-project-scrumdaddy-and-the-devs/server/schema'
+let g:netrw_dirhist_4='/Users/jk/uni/4920/COMP420/sample_challs/encodeOrEncrypt'
+let g:netrw_dirhist_3='/Users/jk/test'
+let g:netrw_dirhist_2='/Users/jk/uni/3900/capstone-project-scrumdaddy-and-the-devs/server/schema'
+let g:netrw_dirhist_1='/Users/jk/uni/6447/assignment/rootkitForPublic/trivial/src/shell'
+let g:netrw_dirhist_0='/Users/jk/joshuakwong.github.io'
+let g:netrw_dirhist_9='/Users/jk/uni/6447/assignment/rootkitForPublic/trivial/src'
+let g:netrw_dirhist_8='/Users/jk/.vim'
+let g:netrw_dirhist_7='/Users/jk/uni/6447/vm/hostfolder'
+let g:netrw_dirhist_6='/Users/jk/uni/6447/vm/hostfolder/finalPrac'
