@@ -41,7 +41,7 @@ which zsh
 if [ $? -ne 0 ]
 then
     echo "zsh has not been installed, will install now"
-    $OSTYPE zsh
+    $PKGMGR zsh
 else
     echo "zsh has been installed :)"
 fi
