@@ -46,10 +46,11 @@ else
     echo "zsh has been installed :)"
 fi
 
+# link zshrc
 echo "- Linking .zshrc ..."
 ln -sf $BASEDIR/.zshrc $HOME/.zshrc
 
-
-
-
-
+# attempt to change shell
+# if fail nothing will happen, gotta do it manually LOL
+echo "- Change default shell to zsh"
+sudo chsh -s $(which zsh) $USER
