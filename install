@@ -8,7 +8,7 @@ then
     echo "OS: MacOS $OSTYPE"
     PKGMGR="brew install "
 
-elif grep -Fq "Ubuntu" /etc/issue || grep -Fq "Debian" /etc/issue 
+elif grep -Fq "Ubuntu" /etc/issue || grep -Fq "Debian" /etc/issue || grep -Fq "Kali" /etc/issue
 then
     echo "OS: $OSTYPE"
     PKGMGR="sudo apt install "
@@ -48,3 +48,8 @@ fi
 
 echo "- Linking .zshrc ..."
 ln -sf $BASEDIR/.zshrc $HOME/.zshrc
+
+
+
+
+
