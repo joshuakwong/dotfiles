@@ -2,55 +2,55 @@
 
 BASEDIR=$PWD
 
-echo "- Determine OS and set package manager..."
+echo "[+] Determine OS and set package manager..."
 if echo $OSTYPE | grep -Fq "darwin" 
 then
-    echo "OS: MacOS $OSTYPE"
+    echo "[+] OS: MacOS $OSTYPE"
     PKGMGR="brew install "
 
 elif grep -Fq "Ubuntu" /etc/issue || grep -Fq "Debian" /etc/issue || grep -Fq "Kali" /etc/issue
 then
-    echo "OS: $OSTYPE"
-    PKGMGR="sudo apt install "
+    echo "[+] OS: $OSTYPE"
+    PKGMGR="sudo apt -y install "
 
 else
-    echo "ERROR: Unsupported OS, change the script yourself"
+    echo "[-] ERROR: Unsupported OS, change the script yourself"
     exit 1
 fi
 
 
 # attempt to clone tmux
 # on success it should overwrite the existing .tmux conf
-echo "- Update tmux if repo still exists"
+echo "[+] Update tmux if repo still exists"
 cd .tmux
 git pull
 cd $BASEDIR
 
-echo "- Linking .vim/ ..."
+echo "[+] Linking .vim/ ..."
 ln -sf $BASEDIR/.vim $HOME/.vim
 
-echo "- Linking .vimrc ..."
+echo "[+] Linking .vimrc ..."
 ln -sf $BASEDIR/.vimrc $HOME/.vimrc
 
-echo "- Linking .tmux ..."
+echo "[+] Linking .tmux ..."
 ln -sf $BASEDIR/.tmux/.tmux.conf $HOME/.tmux.conf
 cp $BASEDIR/.tmux/.tmux.conf.local $HOME
 
-echo "-  Install zsh if it doesn't exist"
+echo "[+] Install zsh if it doesn't exist"
 which zsh
 if [ $? -ne 0 ]
 then
-    echo "zsh has not been installed, will install now"
+    echo "[-] zsh has not been installed, will install now"
     $PKGMGR zsh
 else
-    echo "zsh has been installed :)"
+    echo "[+] zsh has been installed :)"
 fi
 
 # link zshrc
-echo "- Linking .zshrc ..."
+echo "[+] Linking .zshrc ..."
 ln -sf $BASEDIR/.zshrc $HOME/.zshrc
 
 # attempt to change shell
 # if fail nothing will happen, gotta do it manually LOL
-echo "- Change default shell to zsh"
+echo "[+] Change default shell to zsh"
 sudo chsh -s $(which zsh) $USER
