@@ -10,7 +10,7 @@ then
 
 elif grep -Fq "Ubuntu" /etc/issue || grep -Fq "Debian" /etc/issue || grep -Fq "Kali" /etc/issue
 then
-    echo "[+] OS: $OSTYPE"
+    echo "[+] OS: Some supported linux distro, cbf to print it out"
     PKGMGR="sudo apt -y install "
 
 else
