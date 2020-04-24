@@ -51,7 +51,7 @@ which tmux
 if [ $? -ne 0 ]
 then
     echo "[-] tmux has not been installed, will install now"
-    $PKGMGR zsh
+    $PKGMGR tmux
 else
     echo "[+] tmux has been installed :)"
 fi
