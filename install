@@ -36,6 +36,26 @@ echo "[+] Linking .tmux ..."
 ln -sf $BASEDIR/.tmux/.tmux.conf $HOME/.tmux.conf
 cp $BASEDIR/.tmux/.tmux.conf.local $HOME
 
+echo "[+] Install vim if it doesn't exist"
+which vim
+if [ $? -ne 0 ]
+then
+    echo "[-] vim has not been installed, will install now"
+    $PKGMGR vim
+else
+    echo "[+] vim has been installed :)"
+fi
+
+echo "[+] Install tmux if it doesn't exist"
+which tmux
+if [ $? -ne 0 ]
+then
+    echo "[-] tmux has not been installed, will install now"
+    $PKGMGR zsh
+else
+    echo "[+] tmux has been installed :)"
+fi
+
 echo "[+] Install zsh if it doesn't exist"
 which zsh
 if [ $? -ne 0 ]
