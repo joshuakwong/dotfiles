@@ -2,8 +2,7 @@ set mouse=a
 syntax enable
 colorscheme molokai
 set number
-set relativenumber
-set ruler 
+set ruler
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4 expandtab
@@ -22,23 +21,20 @@ set laststatus=2
 set statusline=
 set statusline+=%f
 set statusline+=\ %h%m%r%w
-"set statusline+=\ %=%(%l/%L%)
-"set statusline+=\ %(%o\ %c\ \ %p%)
 set statusline+=%=
-set statusline+=%l:%c\ %L\ 
-set statusline+=%p%% " percentage
-
+set statusline+=%l:%c\ %L\
+" set statusline+=%p%% " percentage
 
 
 set showmatch
 filetype plugin indent on
-inoremap '' <esc>
 inoremap ;; <esc>
+inoremap '; <esc>
+inoremap ;' <esc>
 
 " hightlight search
 set hlsearch
 nnoremap \\ :noh<return>:<esc>
-
 " highlight current line
 set cursorline
 hi cursorline cterm=none term=none
@@ -46,19 +42,26 @@ autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
 
+
 "keep cursor in the middle of the screen
-augroup VCenterCursor
-  au!
-  au BufEnter,WinEnter,WinNew,VimResized *,*.*
-        \ let &scrolloff=winheight(win_getid())/2
-augroup END 
+"augroup VCenterCursor
+"  au!
+"  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+"        \ let &scrolloff=winheight(win_getid())/2
+"augroup END
+set scrolloff=999
+
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
+
 
 " Use case insensitive search, except when using capital letters
 " use incremental search
 set ignorecase
 set smartcase
 set incsearch
-
 
 set foldenable
 set foldmethod=syntax
